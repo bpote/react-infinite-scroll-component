@@ -218,7 +218,7 @@ export default class InfiniteScroll extends Component {
     // because heighted infiniteScroll visualy breaks
     // on drag down as overflow becomes visible
     const outerDivStyle = (this.props.pullDownToRefresh && this.props.height)
-      ? { ...this.props.outerStyle, overflow: 'auto' } : this.props.outerStyle;
+      ? { ...this.props.outerDivStyle, overflow: 'auto' } : this.props.outerDivStyle;
     return (
       <div style={outerDivStyle}>
         <div
@@ -276,7 +276,7 @@ InfiniteScroll.defaultProps = {
   pullDownToRefreshThreshold: 100,
   disableBrowserPullToRefresh: true,
   scrollDirection: "down",
-  outerStyle: {}
+  outerDivStyle: {}
 }
 
 InfiniteScroll.propTypes = {
@@ -298,5 +298,5 @@ InfiniteScroll.propTypes = {
   onScroll: PropTypes.func,
   dataLength: PropTypes.number.isRequired,
   scrollDirection: PropTypes.string,
-  outerStyle: PropTypes.object
+  outerDivStyle: PropTypes.object
 };
